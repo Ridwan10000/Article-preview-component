@@ -19,7 +19,8 @@ let logo = document.querySelector('.logo');
       }
     }
     else{
-      
+      logo.classList.toggle('desktop-inactive');
+      logo.classList.toggle('desktop-active');
     }
       
   });
