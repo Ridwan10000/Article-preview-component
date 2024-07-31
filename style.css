@@ -1,0 +1,197 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--light-grayish-blue);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.container {
+  /* outline: 1px solid black; */
+  width: 90vw;
+  border-radius: 0.5rem;
+  /* overflow: hidden; */
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-optical-sizing: auto;
+  font-style: normal;
+  background-color: white;
+}
+
+.text {
+  padding: 2rem 1.2rem 1rem 1.9rem;
+}
+
+.bold-paragraph {
+  font-size: 1.15rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  color: var(--very-dark-grayish-blue);
+}
+
+.description-paragraph {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: var(--desaturated-dark-blue);
+}
+
+.profile-and-share {
+  padding: 1rem 1.2rem 1rem 1.9rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.avatar-name-date {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.name-date {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--very-dark-grayish-blue);
+}
+
+.date {
+  font-size: 0.9rem;
+  color: var(--desaturated-dark-blue);
+}
+
+.avatar-name-date>img {
+  width: 40px;
+  border-radius: 50%;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  letter-spacing: 0.2rem;
+}
+.logo > p{
+  color: var(--desaturated-dark-blue);
+  font-size: 0.9rem;
+}
+button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--light-grayish-blue);
+  padding-left: 0.9rem;
+}
+button:hover{
+  cursor: pointer;
+  background-color: hsl(210, 46%, 90%);
+}
+ /* JS stylings */
+ .active{
+  display: flex;
+ }
+ .inactive{
+  display: none;
+ }
+ .desktop-active{
+  display: flex;
+  background-color:var(--very-dark-grayish-blue);
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  padding:0.6rem 1.3rem;
+  border-radius: 0.5rem;
+ }
+ .desktop-active ::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 89%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--very-dark-grayish-blue) transparent transparent transparent;
+}
+@media screen and (min-width:630px) {
+  .container {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: 1fr 0.3fr;
+    grid-gap: 0 1rem;
+  }
+
+  .bold-paragraph {
+    font-size: 1.4rem;
+  }
+  .profile-and-share{
+    grid-column: 2 / 3;
+  }
+  .image{
+    grid-row: 1 / 3;
+  }
+  .image img{
+    height: 100%;
+  }
+}
